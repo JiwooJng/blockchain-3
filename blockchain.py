@@ -124,7 +124,7 @@ class Blockchain:
 
                 block_hash = self.hash_block(prev_block['hash'],{"transactions": current_block['transactions'], "index": current_block['index']}, current_block['nonce'])
                 print(block_hash)
-                if block_hash[:4] != "0000" and i != 1 #채우시오 : i가 1이 아니거나 hash값 찾은 hash값 조건 넣기 :
+                if block_hash[:4] != "0000" and i != 1: #채우시오 : i가 1이 아니거나 hash값 찾은 hash값 조건 넣기 :
                     validChain = False
 
                 if current_block['previous_hash'] != prev_block['hash']: #채우시오 : i가 1이 아니거나 현재 블럭의 previous_hash값과 이전 블럭의 hash값이 같은지 비교:
