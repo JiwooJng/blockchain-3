@@ -162,11 +162,11 @@ class Blockchain:
         
         else: #두개
             while len(transactions) > 1:
-                if len(transactions) % 2 != 0 #채우시오 : 홀수일 때:
+                if len(transactions) % 2 != 0: #채우시오 : 홀수일 때:
                     transactions.append(transactions[-1]) #채우시오 : 가장 마지막 tx를 trasactions에 추가
 
                 new_level = []
-                for i in range(0, len(transactions), 2) #채우시오, 채우시오, 채우시오): 0부터 len(tx)까지
+                for i in range(0, len(transactions), 2): #채우시오, 채우시오, 채우시오): 0부터 len(tx)까지
                     left = transactions[i] #채우시오 : i를 활용하여 왼쪽 노드
                     right = transactions[i+1] #채우시오 : i를 활용하여 오른쪽노드
                     new_level.append(self.create_merkle_tree_node(left, right))
